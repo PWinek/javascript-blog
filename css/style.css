@@ -59,11 +59,15 @@ body {
 
 /* Logo */
 .logo {
-  font-family: "Sacramento", cursive;
+  font-family: "Oswald", sans-serif;
   font-weight: 400;
   font-size: 104px;
   line-height: 1;
   text-align: center;
+}
+
+.frame {
+  border: 5px outset black;
 }
 
 /* Lists */

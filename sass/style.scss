@@ -5,7 +5,7 @@
 $color-light: #fff;
 $color-dark: #444;
 
-$font-logo: 'Sacramento', cursive;
+$font-logo: 'Source Sans Pro', sans-serif;
 $font-header: 'Oswald', sans-serif;
 $font-text: 'Source Sans Pro', sans-serif;
 
@@ -67,11 +67,15 @@ body {
 /* Logo */
 
 .logo {
-  font-family: $font-logo;
+  font-family: $font-header;
   font-weight: 400;
   font-size: 104px;
   line-height: 1;
   text-align: center;
+}
+
+.frame {
+  border: 5px outset black;  
 }
 
 /* Lists */
