@@ -10,9 +10,14 @@ function preload(){
 	spritesheet = loadImage('images/books.png');
 }
 
-function setup() {
-  let myCanvas = createCanvas(1138, 400);
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+}
 
+function setup() {
+  let myCanvas = createCanvas(windowWidth, windowHeight);
+  //myCanvas.position(0, 990);
+  //myCanvas.style('z-index', '-1');
   myCanvas.parent('anim');
 
   let frames = spritedata.frames;
@@ -21,8 +26,8 @@ function setup() {
   	let img = spritesheet.get(pos.x, pos.y, pos.w, pos.h);
   	animation.push(img);
   }
-  for (let i = 0; i <= 0; i++){
-  horses[i] = new Sprite(animation, 0, i*100, 0.15);
+  for (let i = 0; i <= 3; i++){
+  horses[i] = new Sprite(animation, 0, i*300, random(0.1, 0.3));
   }
 }
 
