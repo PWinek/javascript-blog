@@ -82,15 +82,17 @@ generateTitleLinks();
 
 function calculateTagsParams(tags){
   const params = {
-    min: 999999,
+    min: 999,
     max: 0
   }
 
   for(let tag in tags){
-    console.log(tag + 'is used' + tags[tag] + 'times');
-    if(tags[tags] > params.max){
+    console.log(tag + ' is used ' + tags[tag] + ' times');
+    if(tags[tag] > params.max){
       params.max = tags[tag];
     
+    }else if(tags[tag] < params.min){
+      params.min = tags[tag];
     }
 
   }
@@ -99,7 +101,11 @@ function calculateTagsParams(tags){
 }
 
 function calculateTagClass(count, params){
-  
+  const normalizedCount = count - params.min;
+  const normalizedMax = params.max - params.min;
+  const percentage = normalizedCount / normalizedMax;
+  const classNumber = Math.floor( percentage * (optCloudClassCount - 1) + 1);
+  return optCloudClassPrefix, classNumber
 }
 
 function generateTags(){
@@ -154,7 +160,7 @@ function generateTags(){
       allTagsData.tags.push({
         tag: tag,
         count: allTags[tag],
-        className: calculateTagClass(allTags[tag], tagsParms)
+        className: calculateTagClass(allTags[tag], tagsParams)
       });
   		}
   		tagList.innerHTML = templates.tagCloudLink(allTagsData);

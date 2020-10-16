@@ -34,6 +34,7 @@
     "onchange": "^5.2.0"
   },
   "dependencies": {
+    "handlebars": "^4.7.6",
     "johnny-five": "^2.0.0",
     "serialport": "^9.0.1"
   }
